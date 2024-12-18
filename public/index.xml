@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lyon NLP Connect</title>
+    <link>https://lyon-nlp-connect.github.io/</link>
+    <description>Recent content on Lyon NLP Connect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; {year} by Irina Proskurina</copyright>
+    <atom:link href="https://lyon-nlp-connect.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lyon NLP Connect</title>
+      <link>https://lyon-nlp-connect.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lyon-nlp-connect.github.io/about/</guid>
+      <description>Lyon NLP Connect is created with the purpose of netwroking.&#xA;We are PhD students at the ERIC Laboratory (Université de Lyon, Lyon 2), organizing collaborative sessions (research seminars, Birds-of-a-Feather discussions) on Natural Language Processing and related topics in Lyon. These sessions aim to bring together PhD students from universities of Lyon and Saint-Étienne, and the broader Lyon NLP community to foster brainstorming, collaboration, and networking.&#xA;If you’d like to participate, please fill out the form below.</description>
+    </item>
+  </channel>
+</rss>

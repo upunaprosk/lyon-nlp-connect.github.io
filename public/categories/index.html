@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categories | Lyon NLP Connect</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <ul class="menu">
+        
+      </ul>
+      <hr />
+    </nav>
+
+    <main>
+      <header>
+        <h1>Lyon NLP Connect</h1>
+        <p>
+          Lyon NLP Connect is created with the goal of fostering networking opportunities.
+        </p>
+      </header>
+
+            <section>
+        <h2>Network (Drag and Connect)</h2>
+        <div id="graph-container" style="width: 100%; max-width: 800px; height: 500px; margin: 20px auto;"></div>
+      </section>
+    </main>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const container = document.getElementById('graph-container');
+
+          
+          const labs = [
+            { id: 1, label: 'Lyon 2', group: 'ERIC' },
+            { id: 2, label: 'Université de Lyon 2', group: 'ERIC' },
+            { id: 3, label: 'Université Lyon 2, Labo ERIC', group: 'ERIC' },
+            { id: 4, label: 'Lyon 2 Eric', group: 'ERIC' },
+            { id: 5, label: 'Universite Lumiere lyon 2', group: 'ERIC' },
+            { id: 6, label: 'INSA Lyon', group: 'LIRIS' },
+            { id: 7, label: 'Lyon 1 - LIRIS', group: 'LIRIS' },
+            { id: 8, label: 'LIRIS', group: 'LIRIS' },
+            { id: 9, label: 'LIRIS Research Lab, University of Lyon 1', group: 'LIRIS' },
+            { id: 10, label: 'INSA Lyon, LIRIS', group: 'LIRIS' },
+            { id: 11, label: 'INSA, LIRIS', group: 'LIRIS' },
+            { id: 12, label: 'UCBL LIRIS', group: 'LIRIS' },
+            { id: 13, label: 'Lyon 2 / LIRIS', group: 'LIRIS' },
+            { id: 14, label: 'LabHC', group: 'Hubert Curien' },
+            { id: 15, label: 'Université Jean Monnet', group: 'Hubert Curien' },
+            { id: 16, label: 'laboratoire Hubert Curien', group: 'Hubert Curien' },
+            { id: 17, label: 'UJM, Hubert Curien', group: 'Hubert Curien' },
+            { id: 18, label: 'LabHC', group: 'Hubert Curien' },
+            { id: 19, label: 'UCBL - CREATIS', group: 'CREATIS' },
+            { id: 20, label: 'UCBL, LBBE', group: 'LBBE' },
+          ];
+
+          
+          const edges = [];
+
+          
+          const nodes = new vis.DataSet(
+            labs.map(lab => ({
+              id: lab.id,
+              label: lab.label,
+              group: lab.group,
+            }))
+          );
+
+          
+          const edgeSet = new vis.DataSet(edges);
+
+          
+          const establishedEdges = new Set();
+
+          
+          const data = { nodes, edges: edgeSet };
+
+          
+          const options = {
+            nodes: {
+              shape: 'dot',
+              size: 20,
+              font: { size: 14 },
+            },
+            edges: {
+              color: { inherit: 'from' },
+              width: 2,
+            },
+            groups: {
+              ERIC: { color: { background: '#FFABAB' }, borderWidth: 1 },
+              LIRIS: { color: { background: '#ABFFAB' }, borderWidth: 1 },
+              'Hubert Curien': { color: { background: '#ABABFF' }, borderWidth: 1 },
+              CREATIS: { color: { background: '#FFFFAB' }, borderWidth: 1 },
+              LBBE: { color: { background: '#FFABFF' }, borderWidth: 1 },
+            },
+            physics: {
+              enabled: true,
+              solver: 'forceAtlas2Based',
+            },
+          };
+
+          
+          const network = new vis.Network(container, data, options);
+
+          
+          function calculateDistance(node1, node2) {
+            const dx = node1.x - node2.x;
+            const dy = node1.y - node2.y;
+            return Math.sqrt(dx * dx + dy * dy);
+          }
+
+          
+          network.on('dragging', function () {
+            const positions = network.getPositions();
+            const nodeIds = nodes.getIds();
+
+            
+            for (let i = 0; i < nodeIds.length; i++) {
+              for (let j = i + 1; j < nodeIds.length; j++) {
+                const node1 = positions[nodeIds[i]];
+                const node2 = positions[nodeIds[j]];
+                const distance = calculateDistance(node1, node2);
+
+                if (distance < 50) { 
+                  const edgeId = `${nodeIds[i]}-${nodeIds[j]}`;
+                  if (!establishedEdges.has(edgeId)) {
+                    establishedEdges.add(edgeId);
+                    edgeSet.add({
+                      id: edgeId,
+                      from: nodeIds[i],
+                      to: nodeIds[j],
+                    });
+                  }
+                }
+              }
+            }
+          });
+        });
+      </script>
+      <section>
+        <h2>About Us</h2>
+        <p>
+          We are PhD students at the ERIC Laboratory (Université de Lyon, Lyon 2), organizing
+          collaborative sessions such as:
+        </p>
+        <ul>
+          <li>Research seminars</li>
+          <li>Birds-of-a-Feather discussions</li>
+          <li>Other events on Natural Language Processing (NLP) and related topics</li>
+        </ul>
+        <p>
+          These sessions aim to bring together:
+        </p>
+        <ul>
+          <li>PhD students from the universities of Lyon and Saint-Étienne</li>
+          <li>The broader Lyon NLP community</li>
+        </ul>
+        <p>
+          Our goal is to encourage brainstorming, collaboration, and networking.
+        </p>
+      </section>
+
+      <section>
+        <h2>Event Details</h2>
+        <p><strong>Event Name:</strong> Lyon NLP Connect</p>
+        <p><strong>Date:</strong> 15th February 2025</p>
+        <p>
+          <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">
+            Google Form Link
+          </a> – Please fill out the form to participate.
+        </p>
+      </section>
+
+      <section>
+        <h2>Event Schedule</h2>
+        <ul>
+          <li><strong>9:00 - 10:00:</strong> Short presentations of interests (round table)</li>
+          <li><strong>11:00 - 12:00:</strong> Birds-of-a-Feather (BoF) session based on the topics most selected in the form</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Summary of Form Responses</h2>
+        <p><strong>Questions Asked:</strong></p>
+        <ul>
+          <li>Are you a PhD or Master's student?</li>
+          <li>
+            What type of events are you interested in?
+            <ul>
+              <li>Birds-of-a-Feather sessions</li>
+              <li>Research seminars</li>
+              <li>Reading clubs</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Most Popular Activities:</strong></p>
+        <ul>
+          <li>
+            <strong>Birds-of-a-Feather sessions:</strong> Informal gatherings to discuss and brainstorm NLP-related topics in a relaxed, collaborative setting.
+          </li>
+          <li>
+            <strong>Reading Club:</strong> Present and discuss published papers in the NLP/TAL field.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Organizers</h2>
+        <p><strong>Irina Proskurina & Erwan Versmée</strong></p>
+        <p><strong>Contact:</strong></p>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/irinaproskurina" target="_blank">Irina's LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/erwan-versmée-a205961a1/" target="_blank">Erwan's LinkedIn</a></li>
+          <li>
+            Email:
+            <a href="mailto:irina.proskurina@univ-lyon2.fr">irina.proskurina@univ-lyon2.fr</a>,
+            <a href="mailto:eve@infologic.fr">eve@infologic.fr</a>
+          </li>
+        </ul>
+      </section>
+
+  </body>
+</html>
+
+<h1>Categories</h1>
+
+<ul class="terms">
+  
+</ul>
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+
