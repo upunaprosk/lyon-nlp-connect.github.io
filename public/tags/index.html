@@ -25,9 +25,6 @@
         <p style="font-size:22px; line-height:1.6;">
           Lyon NLP Connect is a student-led initiative by PhD students at the ERIC Lab, aimed at bringing together and connecting students and early-career researchers with an interest in or working in the field of NLP.
           <br>
-          <br>
-          The first session will consist of two parts. We will start with a roundtable where participants can share their research interests, areas of expertise, and NLP subtopics they are passionate about. Based on these discussions, participants will be grouped by shared themes to facilitate Birds-of-a-Feather-style conversations. The aim is to brainstorm within these groups on predefined questions, fostering collaboration and helping attendees connect with others who have similar interests.<br>
-          The second part of the session will feature a coding workshop on the latest advancements in information retrieval. This hands-on workshop will provide an opportunity to explore recent techniques and collaborate in a practical setting.<br>
           <br>We look forward to seeing you there and building connections within the NLP community!
           <br>
           To register for the first session, fill this form:
@@ -54,30 +51,59 @@
       const successTitle = document.getElementById('success-title');
 
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       const labs = [
-        { id: 1, label: 'Lyon 2', group: 'ERIC' },
-        { id: 2, label: 'Université de Lyon 2', group: 'ERIC' },
-        { id: 3, label: 'Université Lyon 2, Labo ERIC', group: 'ERIC' },
-        { id: 4, label: 'Lyon 2 Eric', group: 'ERIC' },
-        { id: 5, label: 'Universite Lumiere lyon 2', group: 'ERIC' },
-        { id: 6, label: 'INSA Lyon', group: 'LIRIS' },
-        { id: 7, label: 'Lyon 1 - LIRIS', group: 'LIRIS' },
-        { id: 8, label: 'LIRIS', group: 'LIRIS' },
-        { id: 9, label: 'LIRIS Research Lab, University of Lyon 1', group: 'LIRIS' },
-        { id: 10, label: 'INSA Lyon, LIRIS', group: 'LIRIS' },
-        { id: 11, label: 'INSA, LIRIS', group: 'LIRIS' },
-        { id: 12, label: 'UCBL LIRIS', group: 'LIRIS' },
-        { id: 13, label: 'Lyon 2 / LIRIS', group: 'LIRIS' },
-        { id: 14, label: 'LabHC', group: 'Hubert Curien' },
-        { id: 15, label: 'Université Jean Monnet', group: 'Hubert Curien' },
-        { id: 16, label: 'laboratoire Hubert Curien', group: 'Hubert Curien' },
-        { id: 17, label: 'UJM, Hubert Curien', group: 'Hubert Curien' },
-        { id: 18, label: 'LabHC', group: 'Hubert Curien' },
-        { id: 19, label: 'UCBL - CREATIS', group: 'CREATIS' },
-        { id: 20, label: 'UCBL, LBBE', group: 'LBBE' },
+        
+        { id: 1, label: 'Université Lumière Lyon 2', group: 'Université Lumière Lyon 2' },
+        { id: 2, label: 'Lab ERIC', group: 'Université Lumière Lyon 2' },
+        { id: 3, label: 'Lab DDL', group: 'Université Lumière Lyon 2' },
+        { id: 4, label: 'IHRIM', group: 'Université Lumière Lyon 2' },
+
+        
+        { id: 5, label: 'Université Lyon 1', group: 'Université Lyon 1' },
+        { id: 6, label: 'Lab LIRIS', group: 'Université Lyon 1' },
+        { id: 7, label: 'Lab CREATIS', group: 'Université Lyon 1' },
+        { id: 8, label: 'Lab LBBE', group: 'Université Lyon 1' },
+
+        
+        { id: 9, label: 'Université Jean Monnet', group: 'Université Jean Monnet' },
+        { id: 10, label: 'Lab Hubert Curien', group: 'Université Jean Monnet' },
+
+        
+        { id: 11, label: 'ENS Lyon', group: 'ENS Lyon' },
+        { id: 12, label: 'CERGIC', group: 'ENS Lyon' },
+        { id: 13, label: 'IHRIM', group: 'ENS Lyon' },
+
+        
+        { id: 14, label: 'INSA Lyon', group: 'INSA Lyon' },
+        { id: 15, label: 'CITI Lab', group: 'INSA Lyon' },
+        { id: 16, label: 'Lab LIRIS', group: 'INSA Lyon' },
+
+        
+        { id: 17, label: 'CREST - ENSAE & CNRS', group: 'CREST - ENSAE & CNRS' },
+        { id: 18, label: 'INSERM', group: 'INSERM' }
       ];
 
-      
       const edges = [];
       const nodes = new vis.DataSet(
         labs.map(lab => ({
@@ -93,19 +119,46 @@
         nodes: {
           shape: 'dot',
           size: 20,
-          font: { size: 14 },
+          font: { size: 22 },
         },
         edges: {
           color: { inherit: 'from' },
           width: 2,
         },
+      
+      
+      
+      
+      
+      
+      
+      
+      
         groups: {
-          ERIC: { color: { background: '#FFABAB' }, borderWidth: 1 },
-          LIRIS: { color: { background: '#ABFFAB' }, borderWidth: 1 },
-          'Hubert Curien': { color: { background: '#ABABFF' }, borderWidth: 1 },
-          CREATIS: { color: { background: '#FFFFAB' }, borderWidth: 1 },
-          LBBE: { color: { background: '#FFABFF' }, borderWidth: 1 },
-        },
+  'Université Lumière Lyon 2': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
+  'Lab ERIC': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
+  'Lab DDL': { color: { background: '#FFFFBA' }, borderWidth: 1 }, 
+  'IHRIM': { color: { background: '#BAFFC9' }, borderWidth: 1 }, 
+
+  'Université Lyon 1': { color: { background: '#BAE1FF' }, borderWidth: 1 }, 
+  'Lab LIRIS': { color: { background: '#D7BAFF' }, borderWidth: 1 }, 
+  'Lab CREATIS': { color: { background: '#FFB3E6' }, borderWidth: 1 }, 
+  'Lab LBBE': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
+
+  'Université Jean Monnet': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
+  'Lab Hubert Curien': { color: { background: '#FFFFBA' }, borderWidth: 1 }, 
+
+  'ENS Lyon': { color: { background: '#BAFFC9' }, borderWidth: 1 }, 
+  'CERGIC': { color: { background: '#BAE1FF' }, borderWidth: 1 }, 
+  'IHRIM': { color: { background: '#D7BAFF' }, borderWidth: 1 }, 
+
+  'INSA Lyon': { color: { background: '#FFB3E6' }, borderWidth: 1 }, 
+  'CITI Lab': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
+  'Lab LIRIS': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
+
+  'CREST - ENSAE & CNRS': { color: { background: '#FFFFBA' }, borderWidth: 1 }, 
+  'INSERM': { color: { background: '#BAFFC9' }, borderWidth: 1 } 
+      },
         physics: {
           enabled: true,
           solver: 'forceAtlas2Based',
@@ -115,7 +168,6 @@
       const network = new vis.Network(container, data, options);
       const establishedEdges = new Set();
 
-      
       function checkIfAllConnected() {
         const adjacencyList = {};
         nodes.forEach(node => (adjacencyList[node.id] = []));
@@ -125,7 +177,7 @@
         });
 
         const visited = new Set();
-        const stack = [nodes.getIds()[0]]; 
+        const stack = [nodes.getIds()[0]];
 
         while (stack.length > 0) {
           const current = stack.pop();
@@ -139,13 +191,11 @@
           }
         }
 
-        
         if (visited.size === nodes.length) {
           successTitle.style.display = 'block';
         }
       }
 
-      
       network.on('dragging', function () {
         const positions = network.getPositions();
         const nodeIds = nodes.getIds();
@@ -160,7 +210,7 @@
               const dy = node1.y - node2.y;
               const distance = Math.sqrt(dx * dx + dy * dy);
 
-              if (distance < 50) { 
+              if (distance < 50) {
                 const edgeId = `${nodeIds[i]}-${nodeIds[j]}`;
                 if (!establishedEdges.has(edgeId)) {
                   establishedEdges.add(edgeId);
@@ -179,47 +229,207 @@
     });
   </script>
 
-      <section>
-        <h2>Event Details</h2>
-        <p>Lyon NLP Connect</p>
-        <p><strong>Date of the first session:</strong>February 2025 (To be Determined)</p>
-        <p>
-          To register for the first session, fill this form:
-          <a href="https://forms.gle/ggLvZNSct98fEBf17" target="_blank">
-            https://forms.gle/ggLvZNSct98fEBf17
-          </a>
-        </p>
-      </section>
+
+<section>
+  <h2>Event Details</h2>
+  <p><strong>Lyon NLP Connect</strong></p>
+  <p><strong>Date of the first session:</strong> Monday, February 24, 2025</p>
+  <p>
+    To register for the first session, please fill out this form:
+    <a href="https://forms.gle/ggLvZNSct98fEBf17" target="_blank">
+      https://forms.gle/ggLvZNSct98fEBf17
+    </a>
+  </p>
+</section>
+
+<p>
+  The purpose of the first event is to connect students with shared interests in NLP and foster discussions around topics of interest.
+  The event will be held in person.
+</p>
+<p>
+  The first session will consist of two parts. We will start with a roundtable where participants can share their research interests, areas of expertise,
+  and NLP subtopics they are passionate about. Based on these discussions, participants will be grouped by shared themes to facilitate
+  Birds-of-a-Feather-style conversations. The aim is to brainstorm within these groups on predefined questions, fostering collaboration and
+  helping attendees connect with others who have similar interests.
+</p>
+<p>
+  The second part of the session will feature a coding workshop on the latest advancements in information retrieval. This hands-on workshop will
+  provide an opportunity to explore recent techniques and collaborate in a practical setting.
+</p>
+
+<br>
 
       <section>
         <h2>Event Schedule</h2>
         <ul>
           <li><strong>9:00 - 9:30:</strong> Welcoming reception </li>
           <li><strong>9:30 - 9:45:</strong> Session opening </li>
-          <li><strong>9:45 - 10:30:</strong> Round table </li>
+          <li><strong>9:45 - 10:30:</strong> Round table + Birds of a Feather sessions (BoFs) </li>
           <li><strong>10:30 - 11:00:</strong> Coffee break </li>
           <li><strong>11:00 - 12:30:</strong> Coding session </ul>
       </section>
-              <section>
-  <h2>Summary of the First Google Form Responses</h2>
+
+<section>
+  <h2>What are BoFs?</h2>
   <p>
-    In December 2024, we shared the initiative with the NLP community in Lyon and Saint-Étienne, and we were thrilled to see that over 30 people expressed interest in joining. The plot below summarizes the responses to our Google Form.
+    BoFs (Birds of a Feather sessions) are informal gatherings of people with shared interests or passions for specific topics in ML/NLP.
+    They provide a relaxed setting for sharing ideas, discussing challenges, and exploring new research directions.
   </p>
-  <p><strong>Key highlights from the responses:</strong></p>
-  <ul>
-    <li>More than 80% of respondents have a PhD topic related to NLP.</li>
-    <li>Here’s a breakdown of the level of study, grouping similar categories together:</li>
-  </ul>
-  <div id="test-chart" style="width: 100%; max-width: 600px; height: 400px; margin: auto;"></div>
+  <p>
+    You can propose your own topic by sending us an email or sharing it in the Discord server channel called <strong>"BoF Topics."</strong>
+  </p>
+
+  <h3>How BoFs will be organized at this event:</h3>
+  <ol>
+    <li>
+      We will start with a roundtable where each participant introduces themselves and shares their current research interests.
+    </li>
+    <li>
+      Participants will then be divided into groups based on shared interests or topics. Each group will consist of 3–5 participants
+      who are interested in the same area or research topic.
+    </li>
+    <li>
+      Within each group, predefined questions will be provided to guide the discussion. Group members will collaborate, share their
+      thoughts, and brainstorm ideas on the topic.
+    </li>
+    <li>
+      At the end of the session, one representative from each group will summarize and present the key takeaways from their discussion
+      to the larger audience.
+    </li>
+  </ol>
+  <p>
+    BoFs aim to foster collaboration, inspire new ideas, and help attendees build meaningful connections with others who share similar interests.
+  </p>
+</section>
+
+      <section>
+      <h2>Summary of the First Form Responses</h2>
+      <p>
+        We are pleased to see significant interest from the community, with a majority of respondents indicating that their PhD research topics are related to NLP.
+        The plots below summarize the responses from our first form.</p>
+      <p><strong>Key highlights from the responses:</strong></p>
+        <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+
+
+<div id="level-of-study-chart" style="width: 100%; max-width: 100%; height: auto; min-height: 500px; margin: auto;"></div>
+
+
 <script>
-  Plotly.newPlot('test-chart', [{
-    x: ['A', 'B', 'C'],
-    y: [10, 20, 30],
-    type: 'bar'
-  }]);
+  document.addEventListener('DOMContentLoaded', function () {
+    const data = [{
+      type: 'pie',
+      labels: ['PhD student', 'Master’s student', 'Postdoctoral researcher', 'Chercheur'],
+      values: [20, 4, 7, 2],
+      textinfo: 'label+percent',
+      textposition: 'outside',
+      hole: 0.4,
+      marker: {
+        colors: ['#636EFA', '#EF553B', '#00CC96', '#AB63FA']
+      }
+    }];
+
+    const layout = {
+      title: {
+        text: 'Q1: Level of Study',
+        font: { size: 18 }
+      },
+      margin: { t: 50, b: 50, l: 50, r: 50 },
+      showlegend: false
+    };
+
+    Plotly.newPlot('level-of-study-chart', data, layout, {
+      responsive: true
+    });
+  });
 </script>
 
-</section>
+<script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+
+<div id="activities-chart" style="width: 100%; max-width: 800px; height: 500px; margin: auto;"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const data = [{
+      type: 'bar',
+      x: [
+        'Birds of a Feather',
+        'Scientific Presentations',
+        'Reading Club',
+        'Coding Sessions',
+      ],
+      y: [29, 10, 12, 25],
+      marker: {
+        color: 'rgba(55, 128, 191, 0.7)',
+        line: { color: 'rgba(55, 128, 191, 1)', width: 1.5 }
+      },
+      text: [29, 10, 12, 25],
+      textposition: 'auto'
+    }];
+
+    const layout = {
+      title: {
+        text: 'Q2: Activity Participation Preferences',
+        font: { size: 18 }
+      },
+      xaxis: {
+        title: 'Activities',
+        tickangle: 0
+      },
+      yaxis: { title: 'Number of Responses' },
+      margin: { t: 50, b: 150, l: 50, r: 50 },
+    };
+
+    Plotly.newPlot('activities-chart', data, layout, { responsive: true });
+  });
+</script>
+<script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+
+<div id="nlp-domains-chart" style="width: 100%; max-width: 900px; height: 500px; margin: auto;"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const data = [{
+      type: 'bar',
+      x: [
+        'Chatbots',
+        'Information Retrieval',
+        'Speech Processing (Audio-text)',
+        'Applied Linguistics',
+        'Industrial Applications',
+        'Large Language Models (LLMs)',
+        'Fairness and Ethics',
+        'Interpretability',
+        'Frugality of LLMs',
+        'Computational Linguistics',
+        'Philosophy/Ethics',
+      ],
+      y: [6, 19, 7, 8, 9, 17, 9, 14, 8, 2],
+      marker: {
+        color: 'rgba(99, 110, 250, 0.7)',
+        line: { color: 'rgba(99, 110, 250, 1)', width: 1.5 }
+      },
+      text: [6, 19, 6, 8, 9, 17, 9, 14, 8, 1, 1, 1, 1],
+      textposition: 'auto'
+    }];
+
+    const layout = {
+      title: {
+        text: 'Q3: Domains of Interest in NLP',
+        font: { size: 18 }
+      },
+      xaxis: {
+        tickangle: -45
+      },
+      yaxis: { title: 'Number of Responses' },
+      margin: { t: 50, b: 150, l: 50, r: 50 },
+    };
+
+    Plotly.newPlot('nlp-domains-chart', data, layout, { responsive: true });
+  });
+</script>
+
+    </section>
+
 
     <section>
         <h2>About Us</h2>
@@ -235,7 +445,6 @@
           </li>
         </ul>
       </section>
-
   </body>
 </html>
 

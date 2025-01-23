@@ -27,241 +27,96 @@
         <p style="font-size:22px; line-height:1.6;">
           Lyon NLP Connect is a student-led initiative by PhD students at the ERIC Lab, aimed at bringing together and connecting students and early-career researchers with an interest in or working in the field of NLP.
           <br>
-          <br>
-          The first session will consist of two parts. We will start with a roundtable where participants can share their research interests, areas of expertise, and NLP subtopics they are passionate about. Based on these discussions, participants will be grouped by shared themes to facilitate Birds-of-a-Feather-style conversations. The aim is to brainstorm within these groups on predefined questions, fostering collaboration and helping attendees connect with others who have similar interests.<br>
-          The second part of the session will feature a coding workshop on the latest advancements in information retrieval. This hands-on workshop will provide an opportunity to explore recent techniques and collaborate in a practical setting.<br>
-          <br>We look forward to seeing you there and building connections within the NLP community!
-          <br>
           To register for the first session, fill this form:
           <a href="https://forms.gle/ggLvZNSct98fEBf17" target="_blank">
             https://forms.gle/ggLvZNSct98fEBf17
           </a>
+          <br>We look forward to seeing you!
         </p>
 
-      </header>
-
-            <section>
-              <h2>Network (Drag and Connect)</h2>
-<p>
-  Drag and connect nodes to form edges.
-</p>
-<div id="success-title" style="text-align: center; color: green; font-weight: bold; display: none;">
-  Success! You connected all the nodes.
-</div>
-<div id="graph-container" style="width: 100%; max-width: 800px; height: 500px; margin: 20px auto;"></div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const container = document.getElementById('graph-container');
-      const successTitle = document.getElementById('success-title');
-
-      // const labs = [
-      //   { id: 2, label: 'Université de Lyon 2', group: 'ERIC' },
-      //   { id: 3, label: 'Université Lyon 2, Labo ERIC', group: 'ERIC' },
-      //   { id: 5, label: 'Universite Lumiere lyon 2', group: 'ERIC' },
-      //   { id: 6, label: 'INSA Lyon', group: 'LIRIS' },
-      //   { id: 8, label: 'LIRIS', group: 'LIRIS' },
-      //   { id: 10, label: 'INSA Lyon, LIRIS', group: 'LIRIS' },
-      //   { id: 12, label: 'UCBL LIRIS', group: 'LIRIS' },
-      //   { id: 13, label: 'Lyon 2 / LIRIS', group: 'LIRIS' },
-      //   { id: 14, label: 'LabHC', group: 'Hubert Curien' },
-      //   { id: 15, label: 'Université Jean Monnet', group: 'Hubert Curien' },
-      //   { id: 16, label: 'laboratoire Hubert Curien', group: 'Hubert Curien' },
-      //   { id: 17, label: 'UJM, Hubert Curien', group: 'Hubert Curien' },
-      //   { id: 18, label: 'LabHC', group: 'Hubert Curien' },
-      //   { id: 19, label: 'UCBL - CREATIS', group: 'CREATIS' },
-      //   { id: 20, label: 'UCBL, LBBE', group: 'LBBE' },
-      //   { id: 21, label: 'ENS Lyon, CERGIC', group: 'ENS Lyon' },
-      //   { id: 22, label: 'CERGIC', group: 'ENS Lyon' },
-      //   { id: 23, label: 'INSERM', group: 'INSERM' },
-      //   { id: 24, label: 'Univ Lyon 1', group: 'LIRIS' },
-      //   { id: 25, label: 'DDL', group: 'ERIC' }
-      // ];
-      const labs = [
-        // Univ Lumière Lyon 2
-        { id: 1, label: 'Université Lumière Lyon 2', group: 'Université Lumière Lyon 2' },
-        { id: 2, label: 'Lab ERIC', group: 'Université Lumière Lyon 2' },
-        { id: 3, label: 'Lab DDL', group: 'Université Lumière Lyon 2' },
-        { id: 4, label: 'IHRIM', group: 'Université Lumière Lyon 2' },
-
-        // Univ Lyon 1
-        { id: 5, label: 'Université Lyon 1', group: 'Université Lyon 1' },
-        { id: 6, label: 'Lab LIRIS', group: 'Université Lyon 1' },
-        { id: 7, label: 'Lab CREATIS', group: 'Université Lyon 1' },
-        { id: 8, label: 'Lab LBBE', group: 'Université Lyon 1' },
-
-        // Univ Jean Monnet
-        { id: 9, label: 'Université Jean Monnet', group: 'Université Jean Monnet' },
-        { id: 10, label: 'Lab Hubert Curien', group: 'Université Jean Monnet' },
-
-        // ENS Lyon
-        { id: 11, label: 'ENS Lyon', group: 'ENS Lyon' },
-        { id: 12, label: 'CERGIC', group: 'ENS Lyon' },
-        { id: 13, label: 'IHRIM', group: 'ENS Lyon' },
-
-        // INSA Lyon
-        { id: 14, label: 'INSA Lyon', group: 'INSA Lyon' },
-        { id: 15, label: 'CITI Lab', group: 'INSA Lyon' },
-        { id: 16, label: 'Lab LIRIS', group: 'INSA Lyon' },
-
-        // Other submitted answs
-        { id: 17, label: 'CREST - ENSAE & CNRS', group: 'CREST - ENSAE & CNRS' },
-        { id: 18, label: 'INSERM', group: 'INSERM' }
-      ];
-
-      const edges = [];
-      const nodes = new vis.DataSet(
-        labs.map(lab => ({
-          id: lab.id,
-          label: lab.label,
-          group: lab.group,
-        }))
-      );
-      const edgeSet = new vis.DataSet(edges);
-      const data = { nodes, edges: edgeSet };
-
-      const options = {
-        nodes: {
-          shape: 'dot',
-          size: 20,
-          font: { size: 14 },
-        },
-        edges: {
-          color: { inherit: 'from' },
-          width: 2,
-        },
-      //   groups: {
-      //   ERIC: { color: { background: '#FFABAB' }, borderWidth: 1 }, // Light Red
-      //   LIRIS: { color: { background: '#ABFFAB' }, borderWidth: 1 }, // Light Green
-      //   'Hubert Curien': { color: { background: '#ABABFF' }, borderWidth: 1 }, // Light Blue
-      //   CREATIS: { color: { background: '#FFFFAB' }, borderWidth: 1 }, // Light Yellow
-      //   LBBE: { color: { background: '#FFABFF' }, borderWidth: 1 }, // Light Purple
-      //   'ENS Lyon': { color: { background: '#FFD1DC' }, borderWidth: 1 }, // Soft Pink
-      //   INSERM: { color: { background: '#B3E5FC' }, borderWidth: 1 } // Soft Cyan
-      // },
-        groups: {
-  'Université Lumière Lyon 2': { color: { background: '#FFB3BA' }, borderWidth: 1 }, // Pastel Pink
-  'Lab ERIC': { color: { background: '#FFDFBA' }, borderWidth: 1 }, // Pastel Peach
-  'Lab DDL': { color: { background: '#FFFFBA' }, borderWidth: 1 }, // Pastel Yellow
-  'IHRIM': { color: { background: '#BAFFC9' }, borderWidth: 1 }, // Pastel Mint Green
-
-  'Université Lyon 1': { color: { background: '#BAE1FF' }, borderWidth: 1 }, // Pastel Light Blue
-  'Lab LIRIS': { color: { background: '#D7BAFF' }, borderWidth: 1 }, // Pastel Lavender
-  'Lab CREATIS': { color: { background: '#FFB3E6' }, borderWidth: 1 }, // Pastel Pink
-  'Lab LBBE': { color: { background: '#FFB3BA' }, borderWidth: 1 }, // Pastel Pink
-
-  'Université Jean Monnet': { color: { background: '#FFDFBA' }, borderWidth: 1 }, // Pastel Peach
-  'Lab Hubert Curien': { color: { background: '#FFFFBA' }, borderWidth: 1 }, // Pastel Yellow
-
-  'ENS Lyon': { color: { background: '#BAFFC9' }, borderWidth: 1 }, // Pastel Mint Green
-  'CERGIC': { color: { background: '#BAE1FF' }, borderWidth: 1 }, // Pastel Light Blue
-  'IHRIM': { color: { background: '#D7BAFF' }, borderWidth: 1 }, // Pastel Lavender
-
-  'INSA Lyon': { color: { background: '#FFB3E6' }, borderWidth: 1 }, // Pastel Pink
-  'CITI Lab': { color: { background: '#FFB3BA' }, borderWidth: 1 }, // Pastel Pink
-  'Lab LIRIS': { color: { background: '#FFDFBA' }, borderWidth: 1 }, // Pastel Peach
-
-  'CREST - ENSAE & CNRS': { color: { background: '#FFFFBA' }, borderWidth: 1 }, // Pastel Yellow
-  'INSERM': { color: { background: '#BAFFC9' }, borderWidth: 1 } // Pastel Mint Green
-      },
-        physics: {
-          enabled: true,
-          solver: 'forceAtlas2Based',
-        },
-      };
-
-      const network = new vis.Network(container, data, options);
-      const establishedEdges = new Set();
-
-      function checkIfAllConnected() {
-        const adjacencyList = {};
-        nodes.forEach(node => (adjacencyList[node.id] = []));
-        edgeSet.forEach(edge => {
-          adjacencyList[edge.from].push(edge.to);
-          adjacencyList[edge.to].push(edge.from);
-        });
-
-        const visited = new Set();
-        const stack = [nodes.getIds()[0]];
-
-        while (stack.length > 0) {
-          const current = stack.pop();
-          if (!visited.has(current)) {
-            visited.add(current);
-            adjacencyList[current].forEach(neighbor => {
-              if (!visited.has(neighbor)) {
-                stack.push(neighbor);
-              }
-            });
-          }
-        }
-
-        if (visited.size === nodes.length) {
-          successTitle.style.display = 'block';
-        }
-      }
-
-      network.on('dragging', function () {
-        const positions = network.getPositions();
-        const nodeIds = nodes.getIds();
-
-        for (let i = 0; i < nodeIds.length; i++) {
-          for (let j = i + 1; j < nodeIds.length; j++) {
-            const node1 = positions[nodeIds[i]];
-            const node2 = positions[nodeIds[j]];
-
-            if (node1 && node2) {
-              const dx = node1.x - node2.x;
-              const dy = node1.y - node2.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < 50) {
-                const edgeId = `${nodeIds[i]}-${nodeIds[j]}`;
-                if (!establishedEdges.has(edgeId)) {
-                  establishedEdges.add(edgeId);
-                  edgeSet.add({
-                    id: edgeId,
-                    from: nodeIds[i],
-                    to: nodeIds[j],
-                  });
-                  checkIfAllConnected();
-                }
-              }
-            }
-          }
-        }
-      });
-    });
-  </script>
-
-      <section>
         <h2>Event Details</h2>
-        <p>Lyon NLP Connect</p>
-        <p><strong>Date of the first session: </strong>February 2025 (To be Determined)</p>
-        <p>
-          To register for the first session, fill this form:
-          <a href="https://forms.gle/ggLvZNSct98fEBf17" target="_blank">
-            https://forms.gle/ggLvZNSct98fEBf17
-          </a>
-        </p>
-      </section>
+ <p style="font-size:22px; line-height:1.6;">
+        The purpose of the first event is to connect students with shared interests in NLP and foster discussions around topics of interest.
+  The event will be held in person.</p>
 
+<p style="font-size:22px; line-height:1.6;">
+  The first session will consist of two parts. We will start with a roundtable where participants can share their research interests, areas of expertise,
+  and NLP subtopics they are passionate about. Based on these discussions, participants will be grouped by shared themes to facilitate
+  Birds-of-a-Feather-style conversations.
+</p>
+<p style="font-size:22px; line-height:1.6;">
+  The second part of the session will feature a coding workshop on information retrieval.
+</p>
       <section>
-        <h2>Event Schedule</h2>
-        <ul>
+        <h2>Date and Location</h2>
+        <p style="font-size:22px; line-height:1.6;">
+          <strong>Date of the first session: Monday, February 24, 2025 (9.00-12.30)</strong></p>
+
+        <ul style="font-size:22px; line-height:1.6;">
           <li><strong>9:00 - 9:30:</strong> Welcoming reception </li>
           <li><strong>9:30 - 9:45:</strong> Session opening </li>
-          <li><strong>9:45 - 10:30:</strong> Round table </li>
+          <li><strong>9:45 - 10:30:</strong> Round table + Birds of a Feather sessions (BoFs) </li>
           <li><strong>10:30 - 11:00:</strong> Coffee break </li>
           <li><strong>11:00 - 12:30:</strong> Coding session </ul>
       </section>
+<br>
+        <br>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+<div style="width: 48%; margin-bottom: 10px;">
+<br>
+<br>
+  <p style="font-size:22px; line-height:1.6;">
+<strong>16 Quai Claude Bernard, 69007 Lyon</strong><br>
+    <strong>Univ Lyon 2, Berges du Rhône, Déméter</strong>
+<br>
+Monday, February 24, 2025 (9.00-12.30)
+  </p>
+</div>
 
-      <section>
-      <h2>Summary of the First Form Responses</h2>
-      <p>
+<div style="width: 52%; margin-bottom: 10px;">
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d637.9952147503371!2d4.836687971876995!3d45.75156456410361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb78836acfd1%3A0x69124d526aa2b152!2sBuilding%20Demeter!5e1!3m2!1sen!2sfr!4v1737643997522!5m2!1sen!2sfr" iwloc="addr" width="370" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
+</div>
+
+</div>
+
+
+
+                <section>
+  <h2>Other Details</h2>
+  <details>
+  <summary style="font-size: 1.5em;">What are BoFs?</summary>
+  <p style="font-size: 1.3em;">
+      BoFs (Birds of a Feather sessions) are informal gatherings of people with shared interests or passions for specific topics in ML/NLP.
+      They provide a relaxed setting for sharing ideas, discussing challenges, and exploring new research directions.
+    </p>
+  </details>
+  <details>
+    <summary style="font-size: 1.5em;">How to propose your own BoF topic</summary>
+    <p style="font-size: 1.3em;">
+      You can propose your own topic by sending us an email or sharing it in the Discord server channel called <strong>"BoF Topics."</strong>
+    </p>
+  </details>
+  <details>
+    <summary style="font-size: 1.5em;">How BoFs will be organized at this event</summary>
+    <ol  style="font-size: 1.3em;">
+      <li>We will start with a roundtable where each participant introduces themselves and shares their current research interests.</li>
+      <li>Participants will then be divided into groups based on shared interests or topics. Each group will consist of 3–5 participants
+        who are interested in the same area or research topic.</li>
+      <li>Within each group, predefined questions will be provided to guide the discussion. Group members will collaborate, share their
+        thoughts, and brainstorm ideas on the topic.</li>
+      <li>At the end of the session, one representative from each group will summarize and present the key takeaways from their discussion
+        to the larger audience.</li>
+    </ol>
+    </details>
+    <details><summary style="font-size: 1.5em;">Summary of the First Form Responses</summary>
+      <p style="font-size: 1.3em;">
         We are pleased to see significant interest from the community, with a majority of respondents indicating that their PhD research topics are related to NLP.
         The plots below summarize the responses from our first form.</p>
-      <p><strong>Key highlights from the responses:</strong></p>
+      <p style="font-size: 1em;"><strong>Key highlights from the responses:</strong></p>
         <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
 
 <!-- Chart Container -->
@@ -381,19 +236,214 @@
     Plotly.newPlot('nlp-domains-chart', data, layout, { responsive: true });
   });
 </script>
-
+</details>
     </section>
 
+      </header>
+
+            <section>
+              <h2>Network (Drag and Connect)</h2>
+<p style="font-size:20px; line-height:1.6;">
+  Drag and connect nodes to form edges. The nodes are collected from the affiliations of subscribed members.
+</p>
+<div id="success-title" style="text-align: center; color: green; font-weight: bold; display: none;">
+  Success! You connected all the nodes.
+</div>
+<div id="graph-container" style="width: 100%; max-width: 800px; height: 500px; margin: 20px auto;"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('graph-container');
+      const successTitle = document.getElementById('success-title');
+
+      // const labs = [
+      //   { id: 2, label: 'Université de Lyon 2', group: 'ERIC' },
+      //   { id: 3, label: 'Université Lyon 2, Labo ERIC', group: 'ERIC' },
+      //   { id: 5, label: 'Universite Lumiere lyon 2', group: 'ERIC' },
+      //   { id: 6, label: 'INSA Lyon', group: 'LIRIS' },
+      //   { id: 8, label: 'LIRIS', group: 'LIRIS' },
+      //   { id: 10, label: 'INSA Lyon, LIRIS', group: 'LIRIS' },
+      //   { id: 12, label: 'UCBL LIRIS', group: 'LIRIS' },
+      //   { id: 13, label: 'Lyon 2 / LIRIS', group: 'LIRIS' },
+      //   { id: 14, label: 'LabHC', group: 'Hubert Curien' },
+      //   { id: 15, label: 'Université Jean Monnet', group: 'Hubert Curien' },
+      //   { id: 16, label: 'laboratoire Hubert Curien', group: 'Hubert Curien' },
+      //   { id: 17, label: 'UJM, Hubert Curien', group: 'Hubert Curien' },
+      //   { id: 18, label: 'LabHC', group: 'Hubert Curien' },
+      //   { id: 19, label: 'UCBL - CREATIS', group: 'CREATIS' },
+      //   { id: 20, label: 'UCBL, LBBE', group: 'LBBE' },
+      //   { id: 21, label: 'ENS Lyon, CERGIC', group: 'ENS Lyon' },
+      //   { id: 22, label: 'CERGIC', group: 'ENS Lyon' },
+      //   { id: 23, label: 'INSERM', group: 'INSERM' },
+      //   { id: 24, label: 'Univ Lyon 1', group: 'LIRIS' },
+      //   { id: 25, label: 'DDL', group: 'ERIC' }
+      // ];
+      const labs = [
+        // Univ Lumière Lyon 2
+        { id: 1, label: 'Université Lumière Lyon 2', group: 'Université Lumière Lyon 2' },
+        { id: 2, label: 'Lab ERIC', group: 'Université Lumière Lyon 2' },
+        { id: 3, label: 'Lab DDL', group: 'Université Lumière Lyon 2' },
+        { id: 4, label: 'IHRIM', group: 'Université Lumière Lyon 2' },
+
+        // Univ Lyon 1
+        { id: 5, label: 'Université Lyon 1', group: 'Université Lyon 1' },
+        { id: 6, label: 'Lab LIRIS', group: 'Université Lyon 1' },
+        { id: 7, label: 'Lab CREATIS', group: 'Université Lyon 1' },
+        { id: 8, label: 'Lab LBBE', group: 'Université Lyon 1' },
+
+        // Univ Jean Monnet
+        { id: 9, label: 'Université Jean Monnet', group: 'Université Jean Monnet' },
+        { id: 10, label: 'Lab Hubert Curien', group: 'Université Jean Monnet' },
+
+        // ENS Lyon
+        { id: 11, label: 'ENS Lyon', group: 'ENS Lyon' },
+        { id: 12, label: 'CERGIC', group: 'ENS Lyon' },
+        { id: 13, label: 'IHRIM', group: 'ENS Lyon' },
+
+        // INSA Lyon
+        { id: 14, label: 'INSA Lyon', group: 'INSA Lyon' },
+        { id: 15, label: 'CITI Lab', group: 'INSA Lyon' },
+        { id: 16, label: 'Lab LIRIS', group: 'INSA Lyon' },
+
+        // Other submitted answs
+        { id: 17, label: 'CREST - ENSAE & CNRS', group: 'CREST - ENSAE & CNRS' },
+        { id: 18, label: 'INSERM', group: 'INSERM' }
+      ];
+
+      const edges = [];
+      const nodes = new vis.DataSet(
+        labs.map(lab => ({
+          id: lab.id,
+          label: lab.label,
+          group: lab.group,
+        }))
+      );
+      const edgeSet = new vis.DataSet(edges);
+      const data = { nodes, edges: edgeSet };
+
+      const options = {
+        nodes: {
+          shape: 'dot',
+          size: 20,
+          font: { size: 22 },
+        },
+        edges: {
+          color: { inherit: 'from' },
+          width: 2,
+        },
+      //   groups: {
+      //   ERIC: { color: { background: '#FFABAB' }, borderWidth: 1 }, // Light Red
+      //   LIRIS: { color: { background: '#ABFFAB' }, borderWidth: 1 }, // Light Green
+      //   'Hubert Curien': { color: { background: '#ABABFF' }, borderWidth: 1 }, // Light Blue
+      //   CREATIS: { color: { background: '#FFFFAB' }, borderWidth: 1 }, // Light Yellow
+      //   LBBE: { color: { background: '#FFABFF' }, borderWidth: 1 }, // Light Purple
+      //   'ENS Lyon': { color: { background: '#FFD1DC' }, borderWidth: 1 }, // Soft Pink
+      //   INSERM: { color: { background: '#B3E5FC' }, borderWidth: 1 } // Soft Cyan
+      // },
+        groups: {
+  'Université Lumière Lyon 2': { color: { background: '#FFB3BA' }, borderWidth: 1 }, // Pastel Pink
+  'Lab ERIC': { color: { background: '#FFDFBA' }, borderWidth: 1 }, // Pastel Peach
+  'Lab DDL': { color: { background: '#FFFFBA' }, borderWidth: 1 }, // Pastel Yellow
+  'IHRIM': { color: { background: '#BAFFC9' }, borderWidth: 1 }, // Pastel Mint Green
+
+  'Université Lyon 1': { color: { background: '#BAE1FF' }, borderWidth: 1 }, // Pastel Light Blue
+  'Lab LIRIS': { color: { background: '#D7BAFF' }, borderWidth: 1 }, // Pastel Lavender
+  'Lab CREATIS': { color: { background: '#FFB3E6' }, borderWidth: 1 }, // Pastel Pink
+  'Lab LBBE': { color: { background: '#FFB3BA' }, borderWidth: 1 }, // Pastel Pink
+
+  'Université Jean Monnet': { color: { background: '#FFDFBA' }, borderWidth: 1 }, // Pastel Peach
+  'Lab Hubert Curien': { color: { background: '#FFFFBA' }, borderWidth: 1 }, // Pastel Yellow
+
+  'ENS Lyon': { color: { background: '#BAFFC9' }, borderWidth: 1 }, // Pastel Mint Green
+  'CERGIC': { color: { background: '#BAE1FF' }, borderWidth: 1 }, // Pastel Light Blue
+  'IHRIM': { color: { background: '#D7BAFF' }, borderWidth: 1 }, // Pastel Lavender
+
+  'INSA Lyon': { color: { background: '#FFB3E6' }, borderWidth: 1 }, // Pastel Pink
+  'CITI Lab': { color: { background: '#FFB3BA' }, borderWidth: 1 }, // Pastel Pink
+  'Lab LIRIS': { color: { background: '#FFDFBA' }, borderWidth: 1 }, // Pastel Peach
+
+  'CREST - ENSAE & CNRS': { color: { background: '#FFFFBA' }, borderWidth: 1 }, // Pastel Yellow
+  'INSERM': { color: { background: '#BAFFC9' }, borderWidth: 1 } // Pastel Mint Green
+      },
+        physics: {
+          enabled: true,
+          solver: 'forceAtlas2Based',
+        },
+      };
+
+      const network = new vis.Network(container, data, options);
+      const establishedEdges = new Set();
+
+      function checkIfAllConnected() {
+        const adjacencyList = {};
+        nodes.forEach(node => (adjacencyList[node.id] = []));
+        edgeSet.forEach(edge => {
+          adjacencyList[edge.from].push(edge.to);
+          adjacencyList[edge.to].push(edge.from);
+        });
+
+        const visited = new Set();
+        const stack = [nodes.getIds()[0]];
+
+        while (stack.length > 0) {
+          const current = stack.pop();
+          if (!visited.has(current)) {
+            visited.add(current);
+            adjacencyList[current].forEach(neighbor => {
+              if (!visited.has(neighbor)) {
+                stack.push(neighbor);
+              }
+            });
+          }
+        }
+
+        if (visited.size === nodes.length) {
+          successTitle.style.display = 'block';
+        }
+      }
+
+      network.on('dragging', function () {
+        const positions = network.getPositions();
+        const nodeIds = nodes.getIds();
+
+        for (let i = 0; i < nodeIds.length; i++) {
+          for (let j = i + 1; j < nodeIds.length; j++) {
+            const node1 = positions[nodeIds[i]];
+            const node2 = positions[nodeIds[j]];
+
+            if (node1 && node2) {
+              const dx = node1.x - node2.x;
+              const dy = node1.y - node2.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < 50) {
+                const edgeId = `${nodeIds[i]}-${nodeIds[j]}`;
+                if (!establishedEdges.has(edgeId)) {
+                  establishedEdges.add(edgeId);
+                  edgeSet.add({
+                    id: edgeId,
+                    from: nodeIds[i],
+                    to: nodeIds[j],
+                  });
+                  checkIfAllConnected();
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+
+</section>
+<section>
 
     <section>
-        <h2>About Us</h2>
+        <h2>Organizers</h2>
         <p><strong>Irina Proskurina & Erwan Versmée</strong></p>
         <p><strong>Contact:</strong></p>
         <ul>
-          <li><a href="https://www.linkedin.com/in/irinaproskurina" target="_blank">Irina's LinkedIn</a></li>
-          <li><a href="https://www.linkedin.com/in/erwan-versmée-a205961a1/" target="_blank">Erwan's LinkedIn</a></li>
           <li>
-            Email:
             <a href="mailto:irina.proskurina@univ-lyon2.fr">irina.proskurina@univ-lyon2.fr</a>,
             <a href="mailto:eve@infologic.fr">eve@infologic.fr</a>
           </li>
