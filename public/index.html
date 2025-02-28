@@ -1,250 +1,107 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-	<meta name="generator" content="Hugo 0.139.4"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lyon NLP Connect | Lyon NLP Connect</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-  </head>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.144.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181818">
+  <title>
+    
+    Lyon NLP Connect 
+    
+  </title>
+  
+  
+  <link rel="shortcut icon" href="/lyon.ico" type="image/x-icon" />
+  
+  
+  
+  <link rel="stylesheet" href="/minima.4729abde155ef8604fab49399dddcb51836c2f37a9d757fc928b40adeff45d8b.css" integrity="sha256-Rymr3hVe&#43;GBPq0k5nd3LUYNsLzep11f8kotAre/0XYs=">
+  
+  
+  
+  <script defer type="text/javascript" src="/minima.4b8797599c06a476aabe6cbc3949bd2805535b47a95f8db0f0b8e71e7cca2a0a.js" integrity="sha256-S4eXWZwGpHaqvmy8OUm9KAVTW0epX42w8LjnHnzKKgo="></script>
+  
+  
+  
+</head>
+<script>
+  const theme_config = 'light'
+  const theme_light = theme_config === 'system' ? 'light' : theme_config;
+  let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : theme_light;
+  console.debug(theme);
 
-  <body>
-    <nav>
-      <ul class="menu">
+  try {
+    localStorage.setItem('theme', theme);
+    window.minima_theme = theme;
+    document.querySelector('html').classList.add(theme);
+  } catch (e) {
+    console.error(e);
+  }
+</script>
+
+
+
+<body>
+  <header class="mt-3 mb-8">
+  <div class="container mx-auto">
+    <nav class="flex justify-between items-center">
+      <div class="flex items-center">
+        
+        <div id="theme-switch" class="text-2xl cursor-pointer">🌝</div>
+      </div>
+      <ul class="flex items-center text-base font-semibold
+        whitespace-nowrap overflow-x-auto overflow-y-hidden">
+        
+        <li class="ml-2 mr-2">
+          
+          <a href='/'>Home</a>
+          
+        </li>
+        
+        <li class="ml-2 mr-2">
+          
+          <a href="/series">Series</a>
+          
+        </li>
+        
+        <li class="ml-2 mr-2">
+          
+          <a href="/search">🔍</a>
+          
+        </li>
         
       </ul>
-      <hr />
+      
     </nav>
+  </div>
+</header>
 
-    <main>
-      <header>
-        <h1>🦁 Lyon NLP Connect</h1>
-        <p style="font-size:22px; line-height:1.6;">
-          Lyon NLP Connect is a student-led initiative by PhD students at the ERIC Lab, aimed at bringing together and connecting students and early-career researchers with an interest in or working in the field of NLP.
-          <br>
-          To register for the first session, fill this form:
-          <a href="https://forms.gle/ggLvZNSct98fEBf17" target="_blank">
-            https://forms.gle/ggLvZNSct98fEBf17
-          </a>
-          <br>We look forward to seeing you!
-        </p>
 
-        <h2>Event Details</h2>
- <p style="font-size:22px; line-height:1.6;">
-        The purpose of the first event is to connect students with shared interests in NLP and foster discussions around topics of interest.
-  The event will be held in person.</p>
-
-<p style="font-size:22px; line-height:1.6;">
-  The first session will consist of two parts. We will start with a roundtable where participants can share their research interests, areas of expertise,
-  and NLP subtopics they are passionate about. Based on these discussions, participants will be grouped by shared themes to facilitate
-  Birds-of-a-Feather-style conversations.
+  
+<link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" />
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<main class="container mx-auto">
+  <div class="flex items-center flex-col sm:flex-row sm:items-start gap-8">
+    <img class="w-48 sm:w-40 rounded-lg mt-1" src="logo.png" alt="avatar">
+    <div class="text-center sm:text-left">
+      <h2 class="text-3xl font-bold mb-2" style="line-height: 1;">Lyon NLP Connect</h2>
+      <p class="mt-0 mb-0"></p>
+      <p class="mt-3 mb-3 home-intro"><p>Lyon NLP Connect is a student-led initiative by PhD students at the <a href="https://eric.msh-lse.fr/">ERIC Lab</a>, aimed at bringing together and connecting students and early-career researchers with an interest in or working in the field of NLP.</p>
+<p>To sign up for the news and discord server, please fill this form: <a href="https://forms.gle/MyjWzfi5nBXedQ5R6">https://forms.gle/MyjWzfi5nBXedQ5R6</a> .<br>
+We look forward to seeing you!</p>
 </p>
-<p style="font-size:22px; line-height:1.6;">
-  The second part of the session will feature a coding workshop on information retrieval.
-</p>
-      <section>
-        <h2>Date and Location</h2>
-        <p style="font-size:22px; line-height:1.6;">
-          <strong>Date of the first session: Monday, February 24, 2025 (9.00-12.30)</strong></p>
+    </div>
 
-        <ul style="font-size:22px; line-height:1.6;">
-          <li><strong>9:00 - 9:30:</strong> Welcoming reception </li>
-          <li><strong>9:30 - 9:45:</strong> Session opening </li>
-          <li><strong>9:45 - 10:30:</strong> Round table + Birds of a Feather sessions (BoFs) </li>
-          <li><strong>10:30 - 11:00:</strong> Coffee break </li>
-          <li><strong>11:00 - 12:30:</strong> Coding session </ul>
-      </section>
-<br>
-        <br>
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-<div style="width: 48%; margin-bottom: 10px;">
-<br>
-<br>
-  <p style="font-size:22px; line-height:1.6;">
-<strong>16 Quai Claude Bernard, 69007 Lyon</strong><br>
-    <strong>Univ Lyon 2, Berges du Rhône, Déméter</strong>
-<br>
-Monday, February 24, 2025 (9.00-12.30)
-  </p>
-</div>
+  </div>
 
-<div style="width: 52%; margin-bottom: 10px;">
+  <h2 class="text-xl font-bold mb-2" style="line-height: 1;">Network</h2>
 
+Drag and connect nodes to form edges. The nodes are collected from the affiliations of subscribed members.
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d637.9952147503371!2d4.836687971876995!3d45.75156456410361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb78836acfd1%3A0x69124d526aa2b152!2sBuilding%20Demeter!5e1!3m2!1sen!2sfr!4v1737643997522!5m2!1sen!2sfr" iwloc="addr" width="370" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
-
-</div>
-
-</div>
-
-
-
-                <section>
-  <h2>Other Details</h2>
-  <details>
-  <summary style="font-size: 1.5em;">What are BoFs?</summary>
-  <p style="font-size: 1.3em;">
-      BoFs (Birds of a Feather sessions) are informal gatherings of people with shared interests or passions for specific topics in ML/NLP.
-      They provide a relaxed setting for sharing ideas, discussing challenges, and exploring new research directions.
-    </p>
-  </details>
-  <details>
-    <summary style="font-size: 1.5em;">How to propose your own BoF topic</summary>
-    <p style="font-size: 1.3em;">
-      You can propose your own topic by sending us an email or sharing it in the Discord server channel called <strong>"BoF Topics."</strong>
-    </p>
-  </details>
-  <details>
-    <summary style="font-size: 1.5em;">How BoFs will be organized at this event</summary>
-    <ol  style="font-size: 1.3em;">
-      <li>We will start with a roundtable where each participant introduces themselves and shares their current research interests.</li>
-      <li>Participants will then be divided into groups based on shared interests or topics. Each group will consist of 3–5 participants
-        who are interested in the same area or research topic.</li>
-      <li>Within each group, predefined questions will be provided to guide the discussion. Group members will collaborate, share their
-        thoughts, and brainstorm ideas on the topic.</li>
-      <li>At the end of the session, one representative from each group will summarize and present the key takeaways from their discussion
-        to the larger audience.</li>
-    </ol>
-    </details>
-    <details><summary style="font-size: 1.5em;">Summary of the First Form Responses</summary>
-      <p style="font-size: 1.3em;">
-        We are pleased to see significant interest from the community, with a majority of respondents indicating that their PhD research topics are related to NLP.
-        The plots below summarize the responses from our first form.</p>
-      <p style="font-size: 1em;"><strong>Key highlights from the responses:</strong></p>
-        <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
-
-
-<div id="level-of-study-chart" style="width: 100%; max-width: 100%; height: auto; min-height: 500px; margin: auto;"></div>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const data = [{
-      type: 'pie',
-      labels: ['PhD student', 'Master’s student', 'Postdoctoral researcher', 'Chercheur'],
-      values: [20, 4, 7, 2],
-      textinfo: 'label+percent',
-      textposition: 'outside',
-      hole: 0.4,
-      marker: {
-        colors: ['#636EFA', '#EF553B', '#00CC96', '#AB63FA']
-      }
-    }];
-
-    const layout = {
-      title: {
-        text: 'Q1: Level of Study',
-        font: { size: 18 }
-      },
-      margin: { t: 50, b: 50, l: 50, r: 50 },
-      showlegend: false
-    };
-
-    Plotly.newPlot('level-of-study-chart', data, layout, {
-      responsive: true
-    });
-  });
-</script>
-
-<script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
-
-<div id="activities-chart" style="width: 100%; max-width: 800px; height: 500px; margin: auto;"></div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const data = [{
-      type: 'bar',
-      x: [
-        'Birds of a Feather',
-        'Scientific Presentations',
-        'Reading Club',
-        'Coding Sessions',
-      ],
-      y: [29, 10, 12, 25],
-      marker: {
-        color: 'rgba(55, 128, 191, 0.7)',
-        line: { color: 'rgba(55, 128, 191, 1)', width: 1.5 }
-      },
-      text: [29, 10, 12, 25],
-      textposition: 'auto'
-    }];
-
-    const layout = {
-      title: {
-        text: 'Q2: Activity Participation Preferences',
-        font: { size: 18 }
-      },
-      xaxis: {
-        title: 'Activities',
-        tickangle: 0
-      },
-      yaxis: { title: 'Number of Responses' },
-      margin: { t: 50, b: 150, l: 50, r: 50 },
-    };
-
-    Plotly.newPlot('activities-chart', data, layout, { responsive: true });
-  });
-</script>
-<script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
-
-<div id="nlp-domains-chart" style="width: 100%; max-width: 900px; height: 500px; margin: auto;"></div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const data = [{
-      type: 'bar',
-      x: [
-        'Chatbots',
-        'Information Retrieval',
-        'Speech Processing (Audio-text)',
-        'Applied Linguistics',
-        'Industrial Applications',
-        'Large Language Models (LLMs)',
-        'Fairness and Ethics',
-        'Interpretability',
-        'Frugality of LLMs',
-        'Computational Linguistics',
-        'Philosophy/Ethics',
-      ],
-      y: [6, 19, 7, 8, 9, 17, 9, 14, 8, 2],
-      marker: {
-        color: 'rgba(99, 110, 250, 0.7)',
-        line: { color: 'rgba(99, 110, 250, 1)', width: 1.5 }
-      },
-      text: [6, 19, 6, 8, 9, 17, 9, 14, 8, 1, 1, 1, 1],
-      textposition: 'auto'
-    }];
-
-    const layout = {
-      title: {
-        text: 'Q3: Domains of Interest in NLP',
-        font: { size: 18 }
-      },
-      xaxis: {
-        tickangle: -45
-      },
-      yaxis: { title: 'Number of Responses' },
-      margin: { t: 50, b: 150, l: 50, r: 50 },
-    };
-
-    Plotly.newPlot('nlp-domains-chart', data, layout, { responsive: true });
-  });
-</script>
-</details>
-    </section>
-
-      </header>
-
-            <section>
-              <h2>Network (Drag and Connect)</h2>
-<p style="font-size:20px; line-height:1.6;">
-  Drag and connect nodes to form edges. The nodes are collected from the affiliations of subscribed members.
-</p>
 <div id="success-title" style="text-align: center; color: green; font-weight: bold; display: none;">
   Success! You connected all the nodes.
 </div>
@@ -254,29 +111,6 @@ Monday, February 24, 2025 (9.00-12.30)
     document.addEventListener('DOMContentLoaded', function () {
       const container = document.getElementById('graph-container');
       const successTitle = document.getElementById('success-title');
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       const labs = [
         
         { id: 1, label: 'Université Lumière Lyon 2', group: 'Université Lumière Lyon 2' },
@@ -324,21 +158,14 @@ Monday, February 24, 2025 (9.00-12.30)
         nodes: {
           shape: 'dot',
           size: 20,
-          font: { size: 22 },
-        },
+          font: {
+                size: 20,
+                color: '#9999ff'
+        }},
         edges: {
           color: { inherit: 'from' },
           width: 2,
         },
-      
-      
-      
-      
-      
-      
-      
-      
-      
         groups: {
   'Université Lumière Lyon 2': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
   'Lab ERIC': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
@@ -433,38 +260,102 @@ Monday, February 24, 2025 (9.00-12.30)
       });
     });
   </script>
-
-</section>
-<section>
-
-    <section>
-        <h2>Organizers</h2>
+<h2>Organizers:</h2>
         <p><strong>Irina Proskurina & Erwan Versmée</strong></p>
-        <p><strong>Contact:</strong></p>
-        <ul>
-          <li>
-            <a href="mailto:irina.proskurina@univ-lyon2.fr">irina.proskurina@univ-lyon2.fr</a>,
-            <a href="mailto:eve@infologic.fr">eve@infologic.fr</a>
-          </li>
-        </ul>
-      </section>
-  </body>
+
+  
+  <h3 class="text-center sm:text-left mt-6 mb-4 text-2xl font-bold"></h3>
+  
+  <div>
+    
+    
+    
+    <div>
+  <div class="flex flex-col-reverse sm:flex-row sm:justify-between">
+    
+    <a class="text-lg font-bold" href="/second-session/">Second Session</a>
+    
+    
+    <div class="text-sm font-bold whitespace-nowrap"></div>
+    
+  </div>
+  
+  <p class="text-base mb-2">
+    The second session is planned for the week of April 22–25.
+  </p>
+  
+</div>
+    
+    
+    
+    <div>
+  <div class="flex flex-col-reverse sm:flex-row sm:justify-between">
+    
+    <a class="text-lg font-bold" href="/first-session/">First Session</a>
+    
+    
+    <div class="text-sm font-bold whitespace-nowrap"></div>
+    
+  </div>
+  
+  <p class="text-base mb-2">
+    Join us for the first session on Monday, February 24, 2025 (9:00–12:30)!
+  </p>
+  
+</div>
+    
+    
+    
+    <div>
+  <div class="flex flex-col-reverse sm:flex-row sm:justify-between">
+    
+    <a class="text-lg font-bold" href="/about-community/">About the Community</a>
+    
+    
+    <div class="text-sm font-bold whitespace-nowrap"></div>
+    
+  </div>
+  
+  <p class="text-base mb-2">
+    General info about our events
+  </p>
+  
+</div>
+    
+    
+    
+    
+    
+
+
+  </div>
+  
+</main>
+
+
+  <footer class="mt-8 mb-8">
+  <div class="container mx-auto">
+    <div class="mt-8 flex flex-col-reverse sm:flex-row sm:justify-between items-center">
+      <div class="text-center sm:text-left">
+        <p class="mt-0 text-sm"></p>
+        <p class="mt-0 text-xs">
+          Built with <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> v0.144.2
+          and <a href="https://github.com/mivinci/hugo-theme-minima" target="_blank" rel="noopener noreferrer">Minima</a>
+        </p>
+      </div>
+      
+      <p class="flex items-center mt-0">
+        
+          <a class="icon ml-1 mr-1" href="mailto:irina.proskurina@univ-lyon2.fr" title="email">
+          
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          
+          </a>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+
 </html>
-
-
-
-
-
-<ul>
-  
-  
-  
-</ul>
-
-  <footer>
-  
-  
-  </footer>
-  </body>
-</html>
-

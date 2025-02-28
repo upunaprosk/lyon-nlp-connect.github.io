@@ -2,18 +2,92 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lyon NLP Connect</title>
-    <link>http://localhost:1313/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on Lyon NLP Connect</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; {year} by Irina Proskurina</copyright>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Feb 2025 10:52:59 +0800</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Lyon NLP Connect</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Lyon NLP Connect is created with the purpose of netwroking.&lt;/p&gt;&#xA;&lt;p&gt;We are PhD students at the ERIC Laboratory (Université de Lyon, Lyon 2), organizing collaborative sessions (research seminars, Birds-of-a-Feather discussions) on Natural Language Processing and related topics in Lyon. These sessions aim to bring together PhD students from universities of Lyon and Saint-Étienne, and the broader Lyon NLP community to foster brainstorming, collaboration, and networking.&lt;/p&gt;&#xA;&lt;p&gt;If you’d like to participate, please fill out the form below.&lt;/p&gt;</description>
+      <title>Second Session</title>
+      <link>//localhost:1313/second-session/</link>
+      <pubDate>Fri, 28 Feb 2025 10:52:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/second-session/</guid>
+      <description>&lt;h2 id=&#34;event-details&#34;&gt;Event Details&lt;/h2&gt;
+&lt;p&gt;The second session will again consist of two parts—just like the first one! 🤓&lt;br&gt;
+We’ll start with a roundtable where new participants can share their research interests, areas of expertise, and the NLP subtopics they’re passionate about. Then, we&amp;rsquo;ll transition into a Birds-of-a-Feather-style session for lively group discussions.&lt;/p&gt;
+&lt;p&gt;The second part of the session will feature a coding workshop. 🖥️&lt;/p&gt;
+&lt;p&gt;We’re currently selecting topics for both parts, and we encourage you to join our Discord server to weigh in on the discussion. To receive a link to our Discord server, please fill out the form on the home page (if you haven’t already). 🚀&lt;/p&gt;</description>
     </item>
+    
+    <item>
+      <title>First Session</title>
+      <link>//localhost:1313/first-session/</link>
+      <pubDate>Sat, 11 Jan 2025 10:52:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/first-session/</guid>
+      <description>&lt;h2 id=&#34;event-details&#34;&gt;Event Details&lt;/h2&gt;
+&lt;p&gt;The first session will consist of two parts:&lt;br&gt;
+1️⃣ A &lt;strong&gt;roundtable discussion&lt;/strong&gt;, where participants can introduce themselves + BoF session&lt;br&gt;
+2️⃣ A &lt;strong&gt;coding workshop&lt;/strong&gt; focused on information retrieval.&lt;/p&gt;
+&lt;h2 id=&#34;date-and-location&#34;&gt;Date and Location&lt;/h2&gt;
+&lt;p&gt;Date of the first session: Monday, February 24, 2025 (9.00-12.30)&lt;/p&gt;
+
+&lt;div style=&#34;display: flex; justify-content: space-between; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;width: 48%; margin-bottom: 10px;&#34;&gt;
+    &lt;p&gt;
+      &lt;strong&gt;16 Quai Claude Bernard, 69007 Lyon&lt;/strong&gt;&lt;br&gt;
+      &lt;strong&gt;Univ Lyon 2, Berges du Rhône, Déméter&lt;/strong&gt;&lt;br&gt;
+      Monday, February 24, 2025 (9.00-12.30)
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;width: 52%; margin-bottom: 10px;&#34;&gt;
+    &lt;iframe src=&#34;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d637.9952147503371!2d4.836687971876995!3d45.75156456410361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb78836acfd1%3A0x69124d526aa2b152!2sBuilding%20Demeter!5e1!3m2!1sen!2sfr!4v1737643997522!5m2!1sen!2sfr&#34; 
+      width=&#34;370&#34; height=&#34;200&#34; frameborder=&#34;0&#34; style=&#34;border:0;&#34; allowfullscreen=&#34;&#34; aria-hidden=&#34;false&#34; tabindex=&#34;0&#34;&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;programme&#34;&gt;Programme&lt;/h2&gt;
+&lt;p&gt;🕘 9:00 - 9:30 → ☕ Welcoming Reception&lt;br&gt;
+🕤 9:30 - 9:45 → Session Opening&lt;br&gt;
+🕘 9:45 - 10:45 → Round Table + Birds of a Feather (BoF) Sessions.
+Feel Free to choose/submit your topic here: &lt;a href=&#34;https://forms.gle/H6LEvNXuGyJ2fBog6&#34;&gt;https://forms.gle/H6LEvNXuGyJ2fBog6&lt;/a&gt;&lt;br&gt;
+🕥 10:45 - 11:00 → ☕ Coffee Break&lt;br&gt;
+🕚 11:00 - 12:45 → Coding Session&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About the Community</title>
+      <link>//localhost:1313/about-community/</link>
+      <pubDate>Wed, 01 Jan 2025 08:52:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/about-community/</guid>
+      <description>&lt;h2 id=&#34;general-information&#34;&gt;General Information&lt;/h2&gt;
+&lt;p&gt;Our community connects students with shared interests in NLP and fosters discussions on exciting topics.&lt;br&gt;
+Most events will be held in person. 🎤👥&lt;/p&gt;
+
+&lt;section&gt; 
+ &lt;h3&gt;What are BoFs?&lt;/h3&gt;
+&lt;p style=&#34;font-size: 1.3em;&#34;&gt;
+    BoFs (Birds-of-a-Feather sessions) are informal gatherings where people discuss shared interests in ML/NLP.  
+    They provide a relaxed space to exchange ideas, tackle challenges, and explore new research directions.  
+    Here are a few examples from past conferences:  
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;https://2023.emnlp.org/program/bof&#34; target=&#34;_blank&#34;&gt;EMNLP 2023 BoF Sessions&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;https://coling2025.org/program/bof&#34; target=&#34;_blank&#34;&gt;COLING 2025 BoF Sessions&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;https://2023.aclweb.org/calls/bof&#34; target=&#34;_blank&#34;&gt;ACL 2023 BoF Calls&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>//localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/search/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
