@@ -22,7 +22,7 @@
   
   
   
-  <script defer type="text/javascript" src="/minima.4b8797599c06a476aabe6cbc3949bd2805535b47a95f8db0f0b8e71e7cca2a0a.js" integrity="sha256-S4eXWZwGpHaqvmy8OUm9KAVTW0epX42w8LjnHnzKKgo="></script>
+  <script defer type="text/javascript" src="/minima.d8648e7720d364e633445fb167a60901c48196cf47ac8cb3c43bfc7e7abbfb39.js" integrity="sha256-2GSOdyDTZOYzRF&#43;xZ6YJAcSBls9HrIyzxDv8fnq7&#43;zk="></script>
   
   
   
@@ -106,129 +106,83 @@ Drag and connect nodes to form edges. The nodes are collected from the affiliati
   Success! You connected all the nodes.
 </div>
 <div id="graph-container" style="width: 100%; max-width: 800px; height: 500px; margin: 20px auto;"></div>
-
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const container = document.getElementById('graph-container');
-      const successTitle = document.getElementById('success-title');
-      const labs = [
-        
-        { id: 1, label: 'Université Lumière Lyon 2', group: 'Université Lumière Lyon 2' },
-        { id: 2, label: 'Lab ERIC', group: 'Université Lumière Lyon 2' },
-        { id: 3, label: 'Lab DDL', group: 'Université Lumière Lyon 2' },
-        { id: 4, label: 'IHRIM', group: 'Université Lumière Lyon 2' },
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('graph-container');
 
-        
-        { id: 5, label: 'Université Lyon 1', group: 'Université Lyon 1' },
-        { id: 6, label: 'Lab LIRIS', group: 'Université Lyon 1' },
-        { id: 7, label: 'Lab CREATIS', group: 'Université Lyon 1' },
-        { id: 8, label: 'Lab LBBE', group: 'Université Lyon 1' },
+    function getCurrentTheme() {
+      return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
 
-        
-        { id: 9, label: 'Université Jean Monnet', group: 'Université Jean Monnet' },
-        { id: 10, label: 'Lab Hubert Curien', group: 'Université Jean Monnet' },
+    function getFontColor(theme) {
+      return theme === 'dark' ? 'white' : 'black';
+    }
 
-        
-        { id: 11, label: 'ENS Lyon', group: 'ENS Lyon' },
-        { id: 12, label: 'CERGIC', group: 'ENS Lyon' },
-        { id: 13, label: 'IHRIM', group: 'ENS Lyon' },
+    const labs = [
+      { id: 1, label: 'Lab ERIC', group: 'Université Lumière Lyon 2' },
+      { id: 2, label: 'Lab DDL', group: 'Université Lumière Lyon 2' },
+      { id: 3, label: 'Lab LIRIS', group: 'Université Lyon 1' },
+      { id: 4, label: 'Lab CREATIS', group: 'Université Lyon 1' },
+      { id: 5, label: 'Lab LBBE', group: 'Université Lyon 1' },
+      { id: 6, label: 'Lab Hubert Curien', group: 'Université Jean Monnet' },
+      { id: 7, label: 'CERGIC', group: 'ENS Lyon' },
+      { id: 8, label: 'IHRIM', group: 'ENS Lyon' },
+      { id: 9, label: 'INSA Lyon', group: 'INSA Lyon' },
+      { id: 10, label: 'CITI Lab', group: 'INSA Lyon' },
+      { id: 11, label: 'CREST - ENSAE & CNRS', group: 'CREST - ENSAE & CNRS' },
+      { id: 12, label: 'INSERM', group: 'INSERM' }
+    ];
 
-        
-        { id: 14, label: 'INSA Lyon', group: 'INSA Lyon' },
-        { id: 15, label: 'CITI Lab', group: 'INSA Lyon' },
-        { id: 16, label: 'Lab LIRIS', group: 'INSA Lyon' },
+    const groups = {
+      'Université Lumière Lyon 2': { color: { background: '#FFB3BA' }, borderWidth: 1 },
+      'Lab ERIC': { color: { background: '#FFDFBA' }, borderWidth: 1 },
+      'Lab DDL': { color: { background: '#FFFFBA' }, borderWidth: 1 },
+      'IHRIM': { color: { background: '#BAFFC9' }, borderWidth: 1 },
+      'Université Lyon 1': { color: { background: '#BAE1FF' }, borderWidth: 1 },
+      'Lab LIRIS': { color: { background: '#D7BAFF' }, borderWidth: 1 },
+      'Lab CREATIS': { color: { background: '#FFB3E6' }, borderWidth: 1 },
+      'Lab LBBE': { color: { background: '#FFB3BA' }, borderWidth: 1 },
+      'Université Jean Monnet': { color: { background: '#FFDFBA' }, borderWidth: 1 },
+      'Lab Hubert Curien': { color: { background: '#FFFFBA' }, borderWidth: 1 },
+      'ENS Lyon': { color: { background: '#BAFFC9' }, borderWidth: 1 },
+      'CERGIC': { color: { background: '#BAE1FF' }, borderWidth: 1 },
+      'INSA Lyon': { color: { background: '#FFB3E6' }, borderWidth: 1 },
+      'CITI Lab': { color: { background: '#FFB3BA' }, borderWidth: 1 },
+      'CREST - ENSAE & CNRS': { color: { background: '#FFFFBA' }, borderWidth: 1 },
+      'INSERM': { color: { background: '#BAFFC9' }, borderWidth: 1 }
+    };
 
-        
-        { id: 17, label: 'CREST - ENSAE & CNRS', group: 'CREST - ENSAE & CNRS' },
-        { id: 18, label: 'INSERM', group: 'INSERM' }
-      ];
+    let nodes = new vis.DataSet(labs);
+    let edges = new vis.DataSet([]);
+    let network;
+    let establishedEdges = new Set();
 
-      const edges = [];
-      const nodes = new vis.DataSet(
-        labs.map(lab => ({
-          id: lab.id,
-          label: lab.label,
-          group: lab.group,
-        }))
-      );
-      const edgeSet = new vis.DataSet(edges);
-      const data = { nodes, edges: edgeSet };
+    function createNetwork(theme) {
+      if (network) {
+        network.destroy();
+      }
 
-      const options = {
+      let options = {
         nodes: {
           shape: 'dot',
-          size: 20,
-          font: {
-                size: 20,
-                color: '#9999ff'
-        }},
+          size: 18,
+          font: { size: 18, color: getFontColor(theme) }
+        },
         edges: {
           color: { inherit: 'from' },
           width: 2,
         },
-        groups: {
-  'Université Lumière Lyon 2': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
-  'Lab ERIC': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
-  'Lab DDL': { color: { background: '#FFFFBA' }, borderWidth: 1 }, 
-  'IHRIM': { color: { background: '#BAFFC9' }, borderWidth: 1 }, 
-
-  'Université Lyon 1': { color: { background: '#BAE1FF' }, borderWidth: 1 }, 
-  'Lab LIRIS': { color: { background: '#D7BAFF' }, borderWidth: 1 }, 
-  'Lab CREATIS': { color: { background: '#FFB3E6' }, borderWidth: 1 }, 
-  'Lab LBBE': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
-
-  'Université Jean Monnet': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
-  'Lab Hubert Curien': { color: { background: '#FFFFBA' }, borderWidth: 1 }, 
-
-  'ENS Lyon': { color: { background: '#BAFFC9' }, borderWidth: 1 }, 
-  'CERGIC': { color: { background: '#BAE1FF' }, borderWidth: 1 }, 
-  'IHRIM': { color: { background: '#D7BAFF' }, borderWidth: 1 }, 
-
-  'INSA Lyon': { color: { background: '#FFB3E6' }, borderWidth: 1 }, 
-  'CITI Lab': { color: { background: '#FFB3BA' }, borderWidth: 1 }, 
-  'Lab LIRIS': { color: { background: '#FFDFBA' }, borderWidth: 1 }, 
-
-  'CREST - ENSAE & CNRS': { color: { background: '#FFFFBA' }, borderWidth: 1 }, 
-  'INSERM': { color: { background: '#BAFFC9' }, borderWidth: 1 } 
-      },
+        groups: groups,
         physics: {
           enabled: true,
           solver: 'forceAtlas2Based',
         },
       };
 
-      const network = new vis.Network(container, data, options);
-      const establishedEdges = new Set();
+      let data = { nodes, edges };
+      network = new vis.Network(container, data, options);
 
-      function checkIfAllConnected() {
-        const adjacencyList = {};
-        nodes.forEach(node => (adjacencyList[node.id] = []));
-        edgeSet.forEach(edge => {
-          adjacencyList[edge.from].push(edge.to);
-          adjacencyList[edge.to].push(edge.from);
-        });
-
-        const visited = new Set();
-        const stack = [nodes.getIds()[0]];
-
-        while (stack.length > 0) {
-          const current = stack.pop();
-          if (!visited.has(current)) {
-            visited.add(current);
-            adjacencyList[current].forEach(neighbor => {
-              if (!visited.has(neighbor)) {
-                stack.push(neighbor);
-              }
-            });
-          }
-        }
-
-        if (visited.size === nodes.length) {
-          successTitle.style.display = 'block';
-        }
-      }
-
-      network.on('dragging', function () {
+      network.on('dragging', function (event) {
         const positions = network.getPositions();
         const nodeIds = nodes.getIds();
 
@@ -246,11 +200,7 @@ Drag and connect nodes to form edges. The nodes are collected from the affiliati
                 const edgeId = `${nodeIds[i]}-${nodeIds[j]}`;
                 if (!establishedEdges.has(edgeId)) {
                   establishedEdges.add(edgeId);
-                  edgeSet.add({
-                    id: edgeId,
-                    from: nodeIds[i],
-                    to: nodeIds[j],
-                  });
+                  edges.add({ from: nodeIds[i], to: nodeIds[j] });
                   checkIfAllConnected();
                 }
               }
@@ -258,10 +208,57 @@ Drag and connect nodes to form edges. The nodes are collected from the affiliati
           }
         }
       });
+    }
+
+    function checkIfAllConnected() {
+      const adjacencyList = {};
+      nodes.forEach(node => (adjacencyList[node.id] = []));
+      edges.forEach(edge => {
+        adjacencyList[edge.from].push(edge.to);
+        adjacencyList[edge.to].push(edge.from);
+      });
+
+      const visited = new Set();
+      const stack = [nodes.getIds()[0]];
+
+      while (stack.length > 0) {
+        const current = stack.pop();
+        if (!visited.has(current)) {
+          visited.add(current);
+          adjacencyList[current].forEach(neighbor => {
+            if (!visited.has(neighbor)) {
+              stack.push(neighbor);
+            }
+          });
+        }
+      }
+
+      if (visited.size === nodes.length) {
+        document.getElementById('success-title').style.display = 'block';
+      }
+    }
+
+    createNetwork(getCurrentTheme());
+
+    document.addEventListener('themeChanged', function (event) {
+      let newTheme = event.detail.theme;
+      createNetwork(newTheme);
     });
-  </script>
+
+    function switch_theme() {
+      const currentTheme = getCurrentTheme();
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      document.documentElement.classList.remove(currentTheme);
+      document.documentElement.classList.add(newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));
+    }
+  });
+</script>
 <h2>Organizers:</h2>
-        <p><strong>Irina Proskurina & Erwan Versmée</strong></p>
+  <p><strong>Irina Proskurina & Erwan Versmée</strong></p>
 
   
   <h3 class="text-center sm:text-left mt-6 mb-4 text-2xl font-bold"></h3>

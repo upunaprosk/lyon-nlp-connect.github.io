@@ -45,13 +45,16 @@ function switch_theme() {
  * @param {string} next 
  */
 function switch_minima_theme(current, next) {
-  const { classList } = document.documentElement
+  const { classList } = document.documentElement;
   const icon = next === THEME_LIGHT ? icon_light : icon_dark;
 
   classList.remove(current);
   classList.add(next);
   localStorage.setItem('theme', next);
   toggler.innerHTML = icon;
+
+  // 🚀 Emit theme change event to notify other scripts
+  document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: next } }));
 }
 
 /** @param {string} theme  */
