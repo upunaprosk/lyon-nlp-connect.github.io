@@ -1,8 +1,0 @@
-languageCode = 'en-us'
-title = 'Lyon NLP Connect'
-theme = "xmin"
-baseURL = "https://lyon-nlp-connect.github.io/"
-
-# Your copyright notice - appears in site footer.
-# To display a copyright symbol, type `&copy;`.
-copyright = "&copy; {year} by Irina Proskurina"
