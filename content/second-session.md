@@ -28,7 +28,7 @@ You can also select the topics in the form.
 ## Programme
 
 9:00 - 9:30 → ☕ Welcoming Reception  
-9:30 - 11:15 → Round Table + Birds of a Feather (BoF) Sessions.
+9:30 - 11:15 → Round Table + Birds of a Feather (BoF) Sessions  
 11:15 - 11:30 → ☕ Coffee Break  
 11:00 - 12:45 → Coding Session
 
