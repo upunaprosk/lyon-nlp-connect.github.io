@@ -2,7 +2,7 @@
 author: "Organizers"
 title: "Second Session"
 date: "2025-02-28T10:52:59+08:00"
-description: "The second session is planned for the week of April 22–25."
+description: "Join us for the second session on Thursday, April 24, 2025 (9:00–13:00)!"
 categories:
 series:
   - 'Sessions-for-2024-2025-academic-year'
@@ -25,10 +25,11 @@ You can also select the topics in the form.
 - **Map:** [https://www.univ-lyon2.fr/universite/maison-internationale-des-langues-et-des-cultures-milc](https://www.univ-lyon2.fr/universite/maison-internationale-des-langues-et-des-cultures-milc)  
 - **Registration Form:** [https://forms.gle/BAT5uGLSuuMrVijJ9](https://forms.gle/BAT5uGLSuuMrVijJ9)
 
+
 ## Programme
 
-9:00 - 9:30 → ☕ Welcoming Reception  
-9:30 - 11:15 → Round Table + Birds of a Feather (BoF) Sessions  
+ 9:00 - 9:30 → ☕ Welcoming Reception  
+ 9:30 - 11:15 → Round Table + Birds of a Feather (BoF) Sessions  
 11:15 - 11:30 → ☕ Coffee Break  
 11:00 - 12:45 → Coding Session
 
