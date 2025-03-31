@@ -16,7 +16,8 @@ The second part of the session will feature a coding workshop.
 
 We’re currently selecting topics for both parts, and we encourage you to join our Discord server to weigh in on the discussion. 
 To receive a link to our Discord server, please fill out the form on the home page (if you haven’t already).
-You can also select the topics in the form.
+
+You can also select the preferred topics in the registration form below.
 
 ## Date and Location
 
