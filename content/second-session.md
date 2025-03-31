@@ -10,15 +10,26 @@ series:
 
 ## Event Details
 The second session will again consist of two parts—just like the first one!  
-We’ll start with a roundtable where new participants can share their research interests, areas of expertise, and the NLP subtopics they’re passionate about. Then, we'll transition into a Birds-of-a-Feather-style session for lively group discussions.
-
+We’ll start with a roundtable where new participants can share their research interests. 
+Then, we'll transition into a Birds-of-a-Feather-style session for group discussions.
 The second part of the session will feature a coding workshop. 
 
-We’re currently selecting topics for both parts, and we encourage you to join our Discord server to weigh in on the discussion. To receive a link to our Discord server, please fill out the form on the home page (if you haven’t already). 🚀
+We’re currently selecting topics for both parts, and we encourage you to join our Discord server to weigh in on the discussion. 
+To receive a link to our Discord server, please fill out the form on the home page (if you haven’t already).
+You can also select the topics in the form.
 
 ## Date and Location
-**Date of the second session (TBA)**: around April 22–25  
-**Location**: Lyon Berges-du-Rhône
+
+- **Date & Time:** Thursday, 24th April, 9:30–12:30  
+- **Location:** MILC – Salle 308, Pôle Universitaire des Quais, 35 rue Raulin, 69007 LYON  
+- **Map:** [https://www.univ-lyon2.fr/universite/maison-internationale-des-langues-et-des-cultures-milc](https://www.univ-lyon2.fr/universite/maison-internationale-des-langues-et-des-cultures-milc)  
+- **Registration Form:** [https://forms.gle/BAT5uGLSuuMrVijJ9](https://forms.gle/BAT5uGLSuuMrVijJ9)
 
 ## Programme
-TBA
+
+9:00 - 9:30 → ☕ Welcoming Reception  
+9:30 - 11:15 → Round Table + Birds of a Feather (BoF) Sessions.
+11:15 - 11:30 → ☕ Coffee Break  
+11:00 - 12:45 → Coding Session
+
+Looking forward to seeing you !
