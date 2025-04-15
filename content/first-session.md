@@ -10,8 +10,8 @@ series:
 
 ## Event Details
 The first session will consist of two parts:  
-1️⃣ A **roundtable discussion**, where participants can introduce themselves + BoF session  
-2️⃣ A **coding workshop** focused on information retrieval.
+1️. A **roundtable discussion**, where participants can introduce themselves + BoF session  
+2️. A **coding workshop** focused on information retrieval.
 
 ## Date and Location
 Date of the first session: Monday, February 24, 2025 (9.00-12.30)
@@ -38,14 +38,14 @@ Date of the first session: Monday, February 24, 2025 (9.00-12.30)
 🕘 9:00 - 9:30 → ☕ Welcoming Reception  
 🕤 9:30 - 9:45 → Session Opening  
 🕘 9:45 - 10:45 → Round Table + Birds of a Feather (BoF) Sessions.
-Feel Free to choose/submit your topic here: https://forms.gle/H6LEvNXuGyJ2fBog6  
+Submit your topic here: https://forms.gle/H6LEvNXuGyJ2fBog6  
 🕥 10:45 - 11:00 → ☕ Coffee Break  
 🕚 11:00 - 12:45 → Coding Session  
 
 
 ### Part I: Discussions in a Birds-of-a-Feather style (9.45-11.00)
 Round Table + Birds of a Feather (BoF) Sessions.  
-Feel Free to choose/submit your topic here: https://forms.gle/H6LEvNXuGyJ2fBog6  
+Submit your topic here: https://forms.gle/H6LEvNXuGyJ2fBog6  
 For future sessions - join our discord and suggest your topic there!
 
 **Discussion Topic:** **Language Generation**  

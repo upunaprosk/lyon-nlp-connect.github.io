@@ -9,15 +9,13 @@ series:
 ---
 
 ## Event Details
-The second session will again consist of two parts—just like the first one!  
-We’ll start with a roundtable where new participants can share their research interests. 
-Then, we'll transition into a Birds-of-a-Feather-style session for group discussions.
-The second part of the session will feature a coding workshop. 
+The second session will consist of two parts, similar to the first. 
+We'll begin with a roundtable for new participants to share their research interests, followed by a Birds-of-a-Feather-style group discussion. The session will conclude with a coding workshop.
 
-We’re currently selecting topics for both parts, and we encourage you to join our Discord server to weigh in on the discussion. 
-To receive a link to our Discord server, please fill out the form on the home page (if you haven’t already).
+We are finalizing topics for both parts and encourage members to join our Discord server to participate in the discussion. 
+To receive the Discord link, please fill out the form on the homepage (if you haven't already).
 
-You can also select the preferred topics in the registration form below.
+You can also select your preferred topics in the registration form below.
 
 ## Date and Location
 
