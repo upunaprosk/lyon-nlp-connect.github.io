@@ -10,11 +10,12 @@ series:
 
 ## Event Details
 The first session will consist of two parts:  
-1️. A **roundtable discussion**, where participants can introduce themselves + BoF session  
-2️. A **coding workshop** focused on information retrieval.
+1️. **Roundtable discussion**, where participants can introduce themselves + BoF session  
+2️. **Coding workshop** on information retrieval
 
 ## Date and Location
-Date of the first session: Monday, February 24, 2025 (9.00-12.30)
+
+Date: **Monday, February 24, 2025 (9.00-12.30)**
 
 {{< rawhtml >}}
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
