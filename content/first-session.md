@@ -10,7 +10,7 @@ series:
 
 ## Event Details
 The first session will consist of two parts:  
-1️. **Roundtable discussion**, where participants can introduce themselves + BoF session  
+1️. **Roundtable discussion**, where participants can introduce themselves and Birds-of-a-Feather sessions  
 2️. **Coding workshop** on information retrieval
 
 ## Date and Location
