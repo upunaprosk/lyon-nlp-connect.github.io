@@ -27,9 +27,9 @@ You can also select your preferred topics in the registration form below.
 
 ## Programme
 
- 9:00 - 9:30 → ☕ Welcoming Reception  
- 9:30 - 11:15 → Round Table + Birds of a Feather (BoF) Sessions  
+  9:00 - 9:30 → ☕ Welcoming Reception  
+  9:30 - 11:15 → Round Table + Birds of a Feather Sessions (Model Interpretability, RL for NLP)  
 11:15 - 11:30 → ☕ Coffee Break  
-11:00 - 12:45 → Coding Session
+11:00 - 12:45 → Coding Session  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lyon-nlp-connect/lyon-nlp-connect.github.io/blob/main/assets/GPT_model.ipynb)  
 
 Looking forward to seeing you !
