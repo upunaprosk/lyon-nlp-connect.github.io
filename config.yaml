@@ -45,8 +45,6 @@ params:
     description: |
       Lyon NLP Connect is a student-led initiative by PhD students at the [ERIC Lab](https://eric.msh-lse.fr/) (Université Lyon 1 and Lyon 2), aimed at bringing together and connecting students and early-career researchers with an interest in or working in the field of NLP.
       
-      To sign up for the news and discord server, please fill this form: https://forms.gle/MyjWzfi5nBXedQ5R6 .   
-      We look forward to seeing you!
       
 
   social:
@@ -118,6 +116,9 @@ menu:
     - identifier: series
       name: Series
       weight: 2
+    - identifier: community
+      name: Community
+      weight: 3
     - identifier: search
       name: 🔍
       weight: 3
