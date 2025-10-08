@@ -2,7 +2,7 @@
 
 Minima is a clean and minimal Hugo theme originally ported from [Hexo Minima](https://github.com/adisaktijrs/hexo-theme-minima). Check out the [example site](https://mivinci.github.io/hugo-theme-minima).
 
-![screenshot](./images/tn.png)
+![screenshot](static/tn.png)
 
 > Note that the main branch is in development phase, UI or configuration may vary.
 

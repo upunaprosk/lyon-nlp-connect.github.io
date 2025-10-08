@@ -7,7 +7,7 @@ title: Lyon NLP Connect
 googleAnalytics:
 
 pagination:
-  pagerSize: 4
+  pagerSize: 10
   # Specify the number of posts listed at home page
 
 # Specify a theme to use
@@ -121,7 +121,7 @@ menu:
       weight: 3
     - identifier: search
       name: 🔍
-      weight: 3
+      weight: 4
 
 taxonomies:
   category: categories

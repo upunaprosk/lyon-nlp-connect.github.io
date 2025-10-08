@@ -1,6 +1,6 @@
 ---
 author: "Organizers"
-title: "Third Session"
+title: "Third Session (24th of June, 2025)"
 date: "2025-06-10T10:52:59+08:00"
 description: "Join us for third meetup on Tuesday, June 24, 2025 (9:00–13:00)!"
 categories:
